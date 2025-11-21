@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Virtual AI Try-On</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1a202c;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #718096;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            border: 2px solid #fc8181;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        .warning-box h3 {
+            color: #c53030;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box ul {
+            color: #742a2a;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .warning-box li {
+            margin-bottom: 4px;
+        }
+
+        .info-box {
+            background: #ebf8ff;
+            border: 2px solid #90cdf4;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-box h3 {
+            color: #2c5282;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #2d3748;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+
+        .btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #2d3748;
+            margin-top: 12px;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .message {
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .message.success {
+            background: #f0fff4;
+            color: #22543d;
+            border: 2px solid #9ae6b4;
+            display: block;
+        }
+
+        .message.error {
+            background: #fff5f5;
+            color: #742a2a;
+            border: 2px solid #fc8181;
+            display: block;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ Delete Account</h1>
+        <p class="subtitle">Virtual AI Try-On</p>
+
+        <div class="warning-box">
+            <h3>⚠️ Warning: This Action is Permanent</h3>
+            <ul>
+                <li>All your generated images will be deleted</li>
+                <li>Your gallery and history will be lost</li>
+                <li>Active subscriptions will be cancelled</li>
+                <li>Credit packs will be forfeited</li>
+                <li>This action cannot be undone</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>📱 Preferred Method</h3>
+            <p>
+                <strong>Best way to delete:</strong> Open the app, go to Account → Settings → Delete Account.
+                This ensures immediate deletion and cancellation of subscriptions.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3>🌐 Web-Based Deletion Request</h3>
+            <p>
+                If you cannot access the app, fill out this form. We'll send you instructions to complete the deletion process.
+            </p>
+        </div>
+
+        <form id="deletionForm">
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="your@email.com" 
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason for Leaving (Optional)</label>
+                <textarea 
+                    id="reason" 
+                    name="reason" 
+                    placeholder="Help us improve by sharing why you're leaving..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">
+                Request Account Deletion
+            </button>
+
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                Cancel
+            </button>
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <div class="back-link">
+            <a href="privacy-policy.html">Privacy Policy</a> • 
+            <a href="mailto:datamade@mail.com">Contact Support</a>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://virtual-ai-tryon-production.up.railway.app/api/auth/request-deletion';
+
+        document.getElementById('deletionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const messageEl = document.getElementById('message');
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+
+            // Show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading"></span> Submitting...';
+            messageEl.style.display = 'none';
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, reason })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    messageEl.className = 'message success';
+                    messageEl.innerHTML = `
+                        <strong>✅ Request Received</strong><br>
+                        ${data.message || 'Please log into the app to complete account deletion.'}
+                    `;
+                    document.getElementById('deletionForm').reset();
+                } else {
+                    throw new Error(data.error || 'Failed to submit request');
+                }
+            } catch (error) {
+                messageEl.className = 'message error';
+                messageEl.innerHTML = `
+                    <strong>❌ Error</strong><br>
+                    ${error.message || 'Failed to submit deletion request. Please try again or contact support at datamade@mail.com'}
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request Account Deletion';
+            }
+        });
+    </script>
+</body>
+</html>
